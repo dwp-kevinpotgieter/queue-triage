@@ -1,0 +1,24 @@
+dependencies {
+    implementation project(':common:id')
+    implementation project(':core:domain')
+    implementation 'com.fasterxml.jackson.core:jackson-core'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'org.slf4j:slf4j-api'
+
+    //test
+    testCompile project(':common:jackson')
+    testCompile 'com.jayway.jsonpath:json-path'
+    testCompile 'net.minidev:accessors-smart'
+    testCompile 'net.minidev:json-smart'
+    testCompile 'org.valid4j:json-path-matchers'
+    // this was test:common
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.objenesis:objenesis:2.5.1'
+    // this was test:common - end
+
+}

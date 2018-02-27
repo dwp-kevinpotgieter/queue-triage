@@ -1,0 +1,50 @@
+dependencies {
+    implementation project(':common:cxf')
+    implementation project(':common:executor')
+
+    implementation project(':core:domain')
+    implementation project(':core:jms')
+    implementation project(':core:service')
+
+    implementation 'org.apache.activemq:activemq-client'
+    implementation 'org.apache.geronimo.specs:geronimo-jms_1.1_spec'
+    implementation 'javax.ws.rs:javax.ws.rs-api'
+    implementation 'org.slf4j:slf4j-api'
+
+    implementation 'org.springframework.boot:spring-boot'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    implementation 'org.springframework:spring-beans'
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-core'
+    implementation 'org.springframework:spring-jms'
+    implementation 'io.swagger:swagger-annotations'
+
+
+    testCompile project(':core:domain-test-support')
+    testCompile 'org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec'
+    testCompile 'org.apache.geronimo.specs:geronimo-jms_1.1_spec'
+    testCompile 'org.fusesource.hawtbuf:hawtbuf'
+    testCompile 'org.apache.commons:commons-lang3'
+    testCompile 'javax.ws.rs:javax.ws.rs-api'
+    testCompile 'org.slf4j:slf4j-api'
+    testCompile 'org.yaml:snakeyaml'
+
+    testCompile 'org.springframework:spring-core'
+    testCompile 'org.springframework:spring-aop'
+    testCompile 'org.springframework:spring-expression'
+    testCompile 'commons-logging:commons-logging'
+    testCompile 'org.springframework:spring-test'
+    testCompile 'org.springframework:spring-tx'
+
+    // this was test:common
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.objenesis:objenesis:2.5.1'
+    // this was test:common - end
+
+
+}
