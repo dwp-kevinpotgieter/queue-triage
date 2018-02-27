@@ -1,3 +1,20 @@
 rootProject.name = 'queue-triage'
-include 'common:id', 'common:cxf','common:jackson', 'common:cxf-server', 'common:health', 'common:metrics',  'common:jgiven',
-        'common:ldap-test-support', 'common:matchers', 'common:swagger', 'core:client', 'core:client-test-support'
+include 'common:id',
+        'common:cxf',
+        'common:jackson',
+        'common:cxf-server',
+        'common:health',
+        'common:metrics',
+        'common:jgiven',
+        'common:ldap-test-support',
+        'common:matchers',
+        'common:swagger',
+        'core:client',
+        'core:client-test-support',
+        'common:executor',
+        'core:activemq',
+        'core:jms',
+        'core:service',
+        'core:domain',
+        'core:domain-test-support',
+        'core:dao'

@@ -69,6 +69,7 @@ subprojects {
             dependency 'javax.validation:validation-api:1.1.0.Final'
             dependency 'javax.ws.rs:javax.ws.rs-api:2.0.1'
             dependency 'org.apache.commons:commons-lang3:3.5'
+            dependency 'commons-logging:commons-logging:1.2'
             dependency 'io.swagger:swagger-annotations:1.5.16'
 
             dependencySet(group: 'io.dropwizard.metrics', version: '3.1.5') {
@@ -123,6 +124,37 @@ subprojects {
                 entry 'slf4j-api'
                 entry 'slf4j-simple'
             }
+
+            dependencySet(group: 'org.apache.activemq', version: '5.15.3') {
+                entry 'activemq-client'
+                entry 'activemq-broker'
+                entry 'activemq-kahadb-store'
+            }
+
+            dependency 'org.apache.activemq.tooling:activemq-junit:5.15.3'
+            dependency 'org.apache.activemq.protobuf:activemq:5.15.3'
+
+            dependency 'org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1'
+            dependency 'org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1'
+            dependency 'org.fusesource.hawtbuf:hawtbuf:1.11'
+
+            dependencySet(group: 'io.swagger', version: '1.5.16') {
+                entry 'swagger-annotations'
+                entry 'swagger-jaxrs'
+                entry 'swagger-jaxrs'
+                entry 'swagger-core'
+                entry 'swagger-models'
+                entry 'swagger-models'
+            }
+
+            dependency 'io.swagger:swagger-codegen-cli:2.2.3'
+            dependency 'com.google.guava:guava:23.6-jre'
+            dependency 'org.yaml:snakeyaml:1.17'
+
+            dependency 'com.jayway.jsonpath:json-path:2.2.0'
+            dependency 'net.minidev:accessors-smart:1.2'
+            dependency 'net.minidev:json-smart:2.3'
+            dependency 'org.valid4j:json-path-matchers:1.1'
 
 
         }

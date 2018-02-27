@@ -1,0 +1,19 @@
+dependencies {
+    implementation project(':common:id')
+    implementation project(':core:client')
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'com.google.guava:guava'
+    implementation 'org.slf4j:slf4j-api'
+
+    testCompile project(':core:domain-test-support')
+    testCompile project(':core:client')
+    // this was test:common
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.objenesis:objenesis:2.5.1'
+    // this was test:common - end
+}
