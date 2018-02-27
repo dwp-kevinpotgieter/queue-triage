@@ -1,0 +1,35 @@
+dependencies {
+    implementation project(':common:id')
+    implementation project(':common:jackson')
+    implementation project(':core:dao')
+    implementation project(':core:domain')
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'org.mongodb:mongodb-driver'
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'org.springframework.boot:spring-boot'
+    implementation 'org.springframework:spring-context'
+
+    testCompile project(':core:domain-test-support')
+    testCompile project(':core:dao-mongo-test-support')
+
+    testCompile 'commons-logging:commons-logging'
+    testCompile 'com.google.guava:guava'
+    testCompile 'org.yaml:snakeyaml'
+    testCompile 'javax.validation:validation-api'
+    testCompile 'org.hibernate:hibernate-validator'
+    testCompile 'org.jboss.logging:jboss-logging'
+    testCompile 'com.fasterxml:classmate:1.3.3'
+
+    testCompile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+    testCompile 'org.springframework.boot:spring-boot-test'
+    testCompile 'org.springframework:spring-test'
+    // this was test:common
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'junit:junit'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'net.bytebuddy:byte-buddy'
+    testCompile 'org.objenesis:objenesis:2.5.1'
+    // this was test:common - end
+}

@@ -17,4 +17,6 @@ include 'common:id',
         'core:service',
         'core:domain',
         'core:domain-test-support',
-        'core:dao'
+        'core:dao',
+        'core:dao-mongo',
+        'core:dao-mongo-test-support'
