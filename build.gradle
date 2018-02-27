@@ -1,0 +1,139 @@
+buildscript {
+    ext {
+        dependencyManagementPluginVersion = '1.0.4.RELEASE'
+    }
+    repositories {
+        maven { url mavenUrl }
+        jcenter()
+    }
+    dependencies {
+        classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url mavenUrl }
+        jcenter()
+    }
+    apply plugin: 'java'
+    apply plugin: 'idea'
+}
+
+subprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        dependencies {
+
+            dependencySet(group: 'org.apache.cxf', version: '3.1.11') {
+                entry 'cxf-core'
+                entry 'cxf-rt-features-metrics'
+                entry 'cxf-rt-frontend-jaxrs'
+                entry 'cxf-rt-rs-client'
+                entry 'cxf-rt-transports-http'
+                entry 'cxf-rt-transports-http-jetty'
+            }
+
+            dependencySet(group: 'org.springframework.boot', version: '1.5.3.RELEASE') {
+                entry 'spring-boot'
+                entry 'spring-boot-autoconfigure'
+                entry 'spring-boot-test'
+            }
+
+            dependencySet(group: 'org.springframework', version: '4.3.8.RELEASE') {
+                entry 'spring-aop'
+                entry 'spring-beans'
+                entry 'spring-context'
+                entry 'spring-core'
+                entry 'spring-expression'
+                entry 'spring-jms'
+                entry 'spring-jms'
+                entry 'spring-ldap-core'
+                entry 'spring-security-config'
+                entry 'spring-security-core'
+                entry 'spring-security-ldap'
+                entry 'spring-security-web'
+                entry 'spring-test'
+                entry 'spring-tx'
+                entry 'spring-web'
+
+            }
+
+            dependency 'javax.annotation:javax.annotation-api:1.2'
+            dependency 'javax.servlet:javax.servlet-api:3.1.0'
+            dependency 'javax.validation:validation-api:1.1.0.Final'
+            dependency 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+            dependency 'org.apache.commons:commons-lang3:3.5'
+
+            dependencySet(group: 'io.dropwizard.metrics', version: '3.1.5') {
+                entry 'metrics-core'
+                entry 'metrics-servlet'
+            }
+
+            dependencySet(group: 'com.fasterxml.jackson.core', version: '2.8.8') {
+                entry 'jackson-annotations'
+                entry 'jackson-core'
+                entry 'jackson-databind'
+            }
+
+            dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.8.8') {
+                entry 'jackson-dataformat-yaml'
+                entry 'jackson-datatype-jdk8'
+                entry 'jackson-datatype-jsr310'
+            }
+
+            dependencySet(group: 'com.fasterxml.jackson.jaxrs', version: '2.8.8') {
+                entry 'jackson-jaxrs-base'
+                entry 'jackson-jaxrs-json-provider'
+            }
+
+            dependencySet(group: 'com.tngtech.jgiven', version: '0.15.1') {
+                entry 'jgiven-core'
+                entry 'jgiven-html-app'
+                entry 'jgiven-html5-report'
+                entry 'jgiven-junit'
+                entry 'jgiven-spring'
+            }
+
+            dependency 'com.spotify:hamcrest-optional:1.0.2'
+            dependency 'com.thoughtworks.paranamer:paranamer:2.8'
+            dependency 'junit:junit:4.12'
+            dependency 'net.bytebuddy:byte-buddy:1.6.14'
+            dependency 'org.awaitility:awaitility:3.0.0'
+            dependency 'org.fusesource.jansi:jansi:1.15'
+            dependency 'org.mockito:mockito-core:2.8.9'
+            dependency 'org.objenesis:objenesis:2.5.1'
+            dependency 'com.unboundid:unboundid-ldapsdk:4.0.0'
+
+            dependencySet(group: 'org.hamcrest', version: '1.3') {
+                entry 'hamcrest-core'
+                entry 'hamcrest-library'
+            }
+
+            dependencySet(group: 'org.slf4j', version: '1.7.25') {
+                entry 'jcl-over-slf4j'
+                entry 'jul-to-slf4j'
+                entry 'log4j-over-slf4j'
+                entry 'slf4j-api'
+                entry 'slf4j-simple'
+            }
+
+
+        }
+    }
+}
+
+project(':common:cxf-server') {
+    dependencies {
+        compile project(':common:metrics'), project(':common:cxf')
+    }
+}
+project(':common:jackson') {
+    dependencies {
+        compile project(':common:cxf'), project(':common:id')
+    }
+}
