@@ -4,4 +4,10 @@ dependencies {
     implementation 'javax.validation:validation-api'
     implementation 'javax.ws.rs:javax.ws.rs-api'
     implementation 'io.swagger:swagger-annotations'
+
+    testCompile project(':core:client-test-support')
+    testCompile 'junit:junit'
+    testCompile "org.hamcrest:hamcrest-library"
+    testCompile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    testCompile "com.fasterxml.jackson.core:jackson-annotations"
 }
