@@ -3,7 +3,7 @@ buildscript {
         dependencyManagementPluginVersion = '1.0.4.RELEASE'
     }
     repositories {
-//        maven { url mavenUrl }
+        maven { url mavenUrl }
         jcenter()
     }
     dependencies {
@@ -13,7 +13,7 @@ buildscript {
 
 allprojects {
     repositories {
-//        maven { url mavenUrl }
+        maven { url mavenUrl }
         jcenter()
     }
     apply plugin: 'java'
@@ -139,8 +139,9 @@ project(':common:jackson') {
         compile project(':common:cxf'), project(':common:id')
     }
 }
-//project(':core:client') {
-//    dependencies {
-//        compile project(':common:id')
-//    }
-//}
+
+project(':core:client') {
+    dependencies {
+        compile project(':common:id')
+    }
+}
