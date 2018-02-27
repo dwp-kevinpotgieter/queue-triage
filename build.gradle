@@ -69,6 +69,7 @@ subprojects {
             dependency 'javax.validation:validation-api:1.1.0.Final'
             dependency 'javax.ws.rs:javax.ws.rs-api:2.0.1'
             dependency 'org.apache.commons:commons-lang3:3.5'
+            dependency 'io.swagger:swagger-annotations:1.5.16'
 
             dependencySet(group: 'io.dropwizard.metrics', version: '3.1.5') {
                 entry 'metrics-core'
@@ -136,5 +137,10 @@ project(':common:cxf-server') {
 project(':common:jackson') {
     dependencies {
         compile project(':common:cxf'), project(':common:id')
+    }
+}
+project(':core:client') {
+    dependencies {
+        compile project(':common:id')
     }
 }
