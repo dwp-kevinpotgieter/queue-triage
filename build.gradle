@@ -34,6 +34,7 @@ subprojects {
                 entry 'cxf-rt-features-metrics'
                 entry 'cxf-rt-frontend-jaxrs'
                 entry 'cxf-rt-rs-client'
+                entry 'cxf-rt-rs-service-description-swagger'
                 entry 'cxf-rt-transports-http'
                 entry 'cxf-rt-transports-http-jetty'
             }
