@@ -6,6 +6,7 @@ buck-out/
 build/
 jgiven-reports/
 target/
+.gradle/
 
 # Files
 *.iml
