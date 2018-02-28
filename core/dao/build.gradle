@@ -6,19 +6,19 @@ dependencies {
     implementation 'org.slf4j:slf4j-api'
 
     //test
-    testCompile project(':common:jackson')
-    testCompile 'com.jayway.jsonpath:json-path'
-    testCompile 'net.minidev:accessors-smart'
-    testCompile 'net.minidev:json-smart'
-    testCompile 'org.valid4j:json-path-matchers'
+    testImplementation project(':common:jackson')
+    testImplementation 'com.jayway.jsonpath:json-path'
+    testImplementation 'net.minidev:accessors-smart'
+    testImplementation 'net.minidev:json-smart'
+    testImplementation 'org.valid4j:json-path-matchers'
     // this was test:common
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.hamcrest:hamcrest-core'
-    testCompile 'org.hamcrest:hamcrest-library'
-    testCompile 'junit:junit'
-    testCompile 'org.mockito:mockito-core'
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.objenesis:objenesis:2.5.1'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.hamcrest:hamcrest-core'
+    testImplementation 'org.hamcrest:hamcrest-library'
+    testImplementation 'junit:junit'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.objenesis:objenesis:2.5.1'
     // this was test:common - end
 
 }

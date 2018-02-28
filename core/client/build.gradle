@@ -5,9 +5,9 @@ dependencies {
     implementation 'javax.ws.rs:javax.ws.rs-api'
     implementation 'io.swagger:swagger-annotations'
 
-    testCompile project(':core:client-test-support')
-    testCompile 'junit:junit'
-    testCompile "org.hamcrest:hamcrest-library"
-    testCompile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
-    testCompile "com.fasterxml.jackson.core:jackson-annotations"
+    testImplementation project(':core:client-test-support')
+    testImplementation 'junit:junit'
+    testImplementation "org.hamcrest:hamcrest-library"
+    testImplementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    testImplementation "com.fasterxml.jackson.core:jackson-annotations"
 }
