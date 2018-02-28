@@ -25,5 +25,6 @@ include 'common:id',
         'core:sample-data',
         'core:search',
         'core:server',
-        'core:service'
-
+        'core:service',
+        'web:mustache',
+        'web:spring-security'
