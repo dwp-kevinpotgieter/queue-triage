@@ -38,11 +38,11 @@ dependencies {
     implementation 'org.hamcrest:hamcrest-library'
     implementation 'org.yaml:snakeyaml'
 
-    testCompile 'org.apache.activemq:activemq-broker'
-    testCompile 'org.apache.activemq:activemq-kahadb-store'
-    testCompile 'org.eclipse.jetty:jetty-server'
-    testCompile 'org.eclipse.jetty:jetty-servlet'
-    testCompile 'org.eclipse.jetty:jetty-webapp'
-    testCompile 'org.hibernate:hibernate-validator'
+    testImplementation 'org.apache.activemq:activemq-broker'
+    testImplementation 'org.apache.activemq:activemq-kahadb-store'
+    testImplementation 'org.eclipse.jetty:jetty-server'
+    testImplementation 'org.eclipse.jetty:jetty-servlet'
+    testImplementation 'org.eclipse.jetty:jetty-webapp'
+    testImplementation 'org.hibernate:hibernate-validator'
 
 }
