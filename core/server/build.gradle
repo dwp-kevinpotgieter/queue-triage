@@ -1,0 +1,56 @@
+dependencies {
+    implementation project(':common:cxf')
+    implementation project(':common:cxf-server')
+    implementation project(':common:health')
+    implementation project(':common:id')
+    implementation project(':common:jackson')
+    implementation project(':common:metrics')
+    implementation project(':common:swagger')
+    implementation project(':core:activemq')
+    implementation project(':core:client')
+    implementation project(':core:dao')
+    implementation project(':core:dao-mongo')
+    implementation project(':core:domain')
+    implementation project(':core:jms')
+    implementation project(':core:message-classification')
+    implementation project(':core:resend')
+    implementation project(':core:search')
+    implementation project(':core:service')
+
+    implementation 'ch.qos.logback:logback-core'
+    implementation 'ch.qos.logback:logback-classic'
+    implementation 'org.apache.activemq:activemq-client'
+    implementation 'org.apache.cxf:cxf-core'
+    implementation 'org.apache.cxf:cxf-rt-rs-service-description-swagger'
+    implementation 'org.apache.cxf:cxf-rt-transports-http-jetty'
+    implementation 'org.slf4j:jcl-over-slf4j'
+    implementation 'org.slf4j:jul-to-slf4j'
+    implementation 'org.slf4j:log4j-over-slf4j'
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'io.dropwizard.metrics:metrics-servlet'
+    implementation 'io.dropwizard.metrics:metrics-core'
+    implementation 'javax.annotation:javax.annotation-api'
+    implementation 'javax.servlet:javax.servlet-api'
+    implementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider'
+    implementation 'org.mongodb:mongodb-driver'
+    implementation 'org.yaml:snakeyaml'
+    implementation 'org.springframework:spring-beans'
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-core'
+    implementation 'org.springframework:spring-jms'
+    implementation 'org.springframework.security:spring-security-config'
+    implementation 'org.springframework.security:spring-security-core'
+    implementation 'org.springframework:spring-tx'
+    implementation 'org.springframework:spring-web'
+    implementation 'org.springframework.boot:spring-boot'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    implementation 'org.eclipse.jetty:jetty-server'
+
+    testCompile project(':common:matchers')
+    testCompile project(':core:client-test-support')
+    testCompile project(':core:domain-test-support')
+    testCompile 'junit:junit'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'org.mockito:mockito-core'
+}
