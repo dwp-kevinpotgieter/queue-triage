@@ -10,15 +10,15 @@ dependencies{
 
 
     //TEST
-    testCompile 'org.apache.commons:commons-lang3'
-    testCompile 'org.springframework:spring-tx'
+    testImplementation 'org.apache.commons:commons-lang3'
+    testImplementation 'org.springframework:spring-tx'
     // this was test:common
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.hamcrest:hamcrest-core'
-    testCompile 'org.hamcrest:hamcrest-library'
-    testCompile 'junit:junit'
-    testCompile 'org.mockito:mockito-core'
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.objenesis:objenesis:2.5.1'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.hamcrest:hamcrest-core'
+    testImplementation 'org.hamcrest:hamcrest-library'
+    testImplementation 'junit:junit'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.objenesis:objenesis:2.5.1'
     // this was test:common - end
 }

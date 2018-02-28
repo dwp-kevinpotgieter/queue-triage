@@ -5,15 +5,15 @@ dependencies {
     implementation 'org.slf4j:slf4j-api'
 
     //test
-    testCompile project(':core:domain-test-support')
+    testImplementation project(':core:domain-test-support')
 
     // this was test:common
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.hamcrest:hamcrest-core'
-    testCompile 'org.hamcrest:hamcrest-library'
-    testCompile 'junit:junit'
-    testCompile 'org.mockito:mockito-core'
-    testCompile 'net.bytebuddy:byte-buddy'
-    testCompile 'org.objenesis:objenesis:2.5.1'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.hamcrest:hamcrest-core'
+    testImplementation 'org.hamcrest:hamcrest-library'
+    testImplementation 'junit:junit'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'net.bytebuddy:byte-buddy'
+    testImplementation 'org.objenesis:objenesis:2.5.1'
     // this was test:common - end
 }
