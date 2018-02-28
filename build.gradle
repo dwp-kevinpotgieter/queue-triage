@@ -3,7 +3,6 @@ buildscript {
         dependencyManagementPluginVersion = '1.0.4.RELEASE'
     }
     repositories {
-        maven { url mavenUrl }
         jcenter()
     }
     dependencies {
@@ -13,7 +12,6 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url mavenUrl }
         jcenter()
     }
     apply plugin: 'java'
