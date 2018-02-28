@@ -26,5 +26,7 @@ include 'common:id',
         'core:search',
         'core:server',
         'core:service',
+        'web:component-test',
         'web:mustache',
+        'web:server',
         'web:spring-security'
