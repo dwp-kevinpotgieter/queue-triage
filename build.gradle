@@ -120,7 +120,6 @@ subprojects {
                 entry 'spring-expression'
                 entry 'spring-jms'
                 entry 'spring-jms'
-                entry 'spring-ldap-core'
                 entry 'spring-test'
                 entry 'spring-tx'
                 entry 'spring-web'
@@ -143,6 +142,7 @@ subprojects {
                 entry 'spring-boot-test'
             }
 
+            dependency 'com.github.spullara.mustache.java:compiler:0.9.5'
             dependency 'com.google.guava:guava:23.6-jre'
             dependency 'com.jayway.jsonpath:json-path:2.2.0'
             dependency 'com.spotify:hamcrest-optional:1.0.2'
