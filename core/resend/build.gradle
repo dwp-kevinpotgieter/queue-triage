@@ -1,0 +1,30 @@
+dependencies {
+    implementation project(':common:executor')
+    implementation project(':common:id')
+    implementation project(':core:client')
+    implementation project(':core:domain')
+    implementation project(':core:jms')
+    implementation project(':core:search')
+    implementation project(':core:service')
+    implementation 'javax.ws.rs:javax.ws.rs-api'
+    implementation 'io.swagger:swagger-annotations'
+    implementation 'org.slf4j:slf4j-api'
+    // TODO: This should be in a new module :core:resend-spring
+    implementation project(':common:cxf')
+    implementation project(':core:activemq')
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-core'
+
+    testCompile project(':common:jackson')
+    testCompile project(':common:matchers')
+    testCompile project(':core:client-test-support')
+    testCompile project(':core:dao')
+    testCompile 'junit:junit'
+    testCompile 'org.apache.activemq:activemq-client'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'org.hibernate:hibernate-validator'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'org.springframework:spring-jms'
+    testCompile 'org.yaml:snakeyaml'
+}

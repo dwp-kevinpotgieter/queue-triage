@@ -20,6 +20,7 @@ include 'common:id',
         'core:dao-mongo-test-support',
         'core:jms',
         'core:message-classification',
+        'core:resend',
         'core:search',
         'core:service'
 
