@@ -13,12 +13,4 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest-library'
     testImplementation 'org.springframework.boot:spring-boot-test'
     testImplementation 'org.yaml:snakeyaml'
-    /*
-            "//lib/javax:javax-servlet-api",
-        "//lib/ldap:unboundid-ldapsdk",
-        "//lib/spring:spring-security-ldap-with-dependencies",
-        "//lib/spring:spring-web",
-        "//lib/spring:spring-boot",
-
-     */
 }

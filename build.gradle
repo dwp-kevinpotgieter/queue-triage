@@ -142,9 +142,17 @@ subprojects {
                 entry 'spring-boot-test'
             }
 
+            dependencySet(group: 'org.seleniumhq.selenium', version: '3.8.1') {
+                entry 'selenium-firefox-driver'
+                entry 'selenium-java'
+                entry 'selenium-remote-driver'
+                entry 'selenium-support'
+            }
+
             dependency 'com.github.spullara.mustache.java:compiler:0.9.5'
             dependency 'com.google.guava:guava:23.6-jre'
             dependency 'com.jayway.jsonpath:json-path:2.2.0'
+            dependency 'com.codeborne:selenide:4.10.01'
             dependency 'com.spotify:hamcrest-optional:1.0.2'
             dependency 'com.thoughtworks.paranamer:paranamer:2.8'
             dependency 'com.unboundid:unboundid-ldapsdk:4.0.0'
