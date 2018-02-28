@@ -1,0 +1,27 @@
+dependencies {
+    implementation project(':common:id')
+    implementation project(':common:cxf')
+    implementation project(':core:domain')
+    implementation project(':core:service')
+    implementation project(':core:search')
+    implementation 'com.fasterxml.jackson.core:jackson-annotations'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'javax.ws.rs:javax.ws.rs-api'
+    implementation 'io.swagger:swagger-annotations'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'org.slf4j:slf4j-api'
+
+    implementation 'org.springframework:spring-beans'
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-core'
+    implementation 'org.springframework.boot:spring-boot'
+
+    testCompile project(':common:jackson')
+    testCompile project(':common:matchers')
+    testCompile 'junit:junit'
+    testCompile 'org.hamcrest:hamcrest-core'
+    testCompile 'org.hamcrest:hamcrest-library'
+    testCompile 'org.hibernate:hibernate-validator'
+    testCompile 'org.mockito:mockito-core'
+    testCompile 'org.yaml:snakeyaml'
+}
