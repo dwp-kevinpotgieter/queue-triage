@@ -13,6 +13,7 @@ import uk.gov.dwp.queue.triage.jgiven.ReflectionArgumentFormatter;
 
 import java.util.Arrays;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 import static uk.gov.dwp.queue.triage.core.client.CreateFailedMessageRequest.newCreateFailedMessageRequest;
 import static uk.gov.dwp.queue.triage.core.client.search.SearchFailedMessageRequest.searchMatchingAllCriteria;
@@ -87,7 +88,7 @@ public class SearchFailedMessageComponentTest extends BaseCoreComponentTest<Sear
                 .withDestination("queue-name")
         );
 
-        then().theSearchResultsContain(contains(
+        then().theSearchResultsContain(containsInAnyOrder(
                 aFailedMessage().withFailedMessageId(equalTo(failedMessageId)),
                 aFailedMessage().withFailedMessageId(equalTo(anotherFailedMessageId))
         ));

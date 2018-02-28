@@ -84,6 +84,8 @@ subprojects {
 
             dependencySet(group: 'org.eclipse.jetty', version: '9.4.4.v20170414') {
                 entry 'jetty-server'
+                entry 'jetty-servlet'
+                entry 'jetty-webapp'
             }
 
             dependencySet(group: 'org.hamcrest', version: '1.3') {
