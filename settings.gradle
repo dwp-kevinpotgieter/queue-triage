@@ -21,6 +21,7 @@ include 'common:id',
         'core:jms',
         'core:message-classification',
         'core:resend',
+        'core:sample-data',
         'core:search',
         'core:service'
 
