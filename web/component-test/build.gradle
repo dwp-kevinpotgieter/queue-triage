@@ -7,8 +7,8 @@ dependencies {
     implementation project(':core:client')
     implementation project(':core:client-test-support')
 
+    implementation 'ch.qos.logback:logback-classic'
     implementation 'com.codeborne:selenide'
-    implementation 'org.seleniumhq.selenium:selenium-java'
     implementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider'
     implementation 'com.spotify:hamcrest-optional'
     implementation 'com.tngtech.jgiven:jgiven-core'
@@ -17,13 +17,14 @@ dependencies {
     implementation 'javax.ws.rs:javax.ws.rs-api'
     implementation 'junit:junit'
     implementation 'org.apache.activemq:activemq-client'
-    implementation 'org.springframework:spring-test'
-    implementation 'org.springframework:spring-web'
-    implementation 'org.springframework.boot:spring-boot'
-    implementation 'org.springframework.boot:spring-boot-test'
     implementation 'org.hamcrest:hamcrest-core'
     implementation 'org.hamcrest:hamcrest-library'
     implementation 'org.mockito:mockito-core'
+    implementation 'org.seleniumhq.selenium:selenium-java'
+    implementation 'org.springframework.boot:spring-boot'
+    implementation 'org.springframework.boot:spring-boot-test'
+    implementation 'org.springframework:spring-test'
+    implementation 'org.springframework:spring-web'
 
     testImplementation project(':web:server')
     testImplementation 'org.eclipse.jetty:jetty-server'
@@ -35,6 +36,7 @@ dependencies {
 }
 
 test {
+    systemProperty 'webdriver.gecko.driver', "${project.rootDir}/lib/geckodriver/geckodriver"
     systemProperty "browser", project.findProperty('selenium.browser') ?: 'firefox'
     if (project.hasProperty("selenium.remote_url")) {
         systemProperty "remote", project.property("selenium.remote_url")

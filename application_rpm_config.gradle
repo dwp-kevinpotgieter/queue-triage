@@ -1,0 +1,39 @@
+def applicationProjects = [':core:server', ':web:server']
+
+configure(subprojects.findAll { applicationProjects.contains(it.path) }) { project ->
+    apply plugin: 'application'
+    apply plugin: 'nebula.ospackage'
+    ospackage {
+        packageName = project.name
+        version = project.version
+        release = '1'
+        arch = NOARCH
+        os = LINUX
+
+        into("/srv/app/${project.name}") {
+            user 'deploy'
+        }
+
+        directory("/srv/app/${project.name}/log", 0550)
+
+        into("/srv/app/${project.name}/log") {
+            includeEmptyDirs = true
+            user 'deploy'
+        }
+
+        into("/srv/app/${project.name}/log") {
+            user 'deploy'
+        }
+
+        from(installDist.outputs.files) {
+            into "/srv/app/${project.name}"
+        }
+
+        from('src/main/resources') {
+            fileType CONFIG | NOREPLACE
+            into "/srv/app/${project.name}/conf"
+        }
+
+    }
+    buildRpm.dependsOn installDist
+}
