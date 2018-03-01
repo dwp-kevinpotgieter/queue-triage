@@ -1,7 +1,3 @@
-apply plugin: 'distribution'
-apply plugin: 'nebula.ospackage'
-
-
 dependencies {
     implementation project(':common:id')
     implementation project(':common:jackson')
