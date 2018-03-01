@@ -16,30 +16,27 @@ To configure the project for IntelliJ run:
 
 To create the relevant Mongo Roles and Users execute the following (this assumes Mongo is running locally on port 27017 and an `admin` user exists with password `Passw0rd`.  These values can be overridden using environment variables, see [mongo-queue-triage-roles.sh](core/dao-mongo/src/main/resources/mongo-queue-triage-roles.sh) or [mongo-queue-triage-users.sh](core/dao-mongo/src/main/resources/mongo-queue-triage-users.sh)):
 ```bash
-buck build //core/dao-mongo:create-users-and-roles
+./gradlew createUsersAndRoles
 ```
 
 ### Testing
 To test all the modules run the following commands:
 
 ```bash
-buck test --all --exclude component-test
-buck test --all --include component-test
+./gradlew test
 ```
 #### Testing - Configuration
-The web component-test will run against a local firefox.  There are a number of options that can be configuration by adding a `[selenium]` section to a `.buckconfig.local` file.
+The web component-test will run against a local firefox.  There are a number of options that can be configuration by adding passing in parameters to the build.
 
 ##### `browser`
 Execute the selenium tests against a given browser
-```
-[selenium]
-  browser = firefox|phantomjs
+```bash
+./gradlew test -Pbrowser=firefox|phantomjs
 ```
 ##### `remote_url`
 Can be used to execute the selenium tests against a remote selenium instance
-```
-[selenium]
-  remote_url = http://localhost:4444/wd/hub
+```bash
+./gradlew test -Pselenium.remote_url=http://localhost:4444/wd/hub
 ```
 
 ### Starting
@@ -72,4 +69,24 @@ allprojects {
 where <https://repo.internal.com/maven2> is your internal local repo location.
 
 NOTE: This file **should not** be under version-control.
+
+
+###Releasing
+The axion-release plugin is used to apply semantic versioning to the project after successful builds. You can view more detailed 
+documentation on their [website](http://axion-release-plugin.readthedocs.io/en/latest/index.html) but here is the TL;DR
+
+To inspect what version your current codebase is running against:
+```bash
+./gradlew currentVersion
+```
+
+To release a new version of the committed and pushed code, then execute:
+```bash
+./gradlew release
+```
+
+If you'd like to test these options out, then you can run in dry-run mode:
+```bash
+./gradlew release -Prelease.dryRun
+```
 

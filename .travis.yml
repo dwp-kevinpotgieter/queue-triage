@@ -19,6 +19,9 @@ script:
   - ./gradlew createUsersAndRoles
   - ./gradlew build -Pselenium.remote_url=http://localhost:4444/wd/hub
 
+after_success:
+  - ./gradlew release
+
 services:
   - mongodb
   - docker

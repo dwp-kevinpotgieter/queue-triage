@@ -7,8 +7,16 @@ buildscript {
     }
     dependencies {
         classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
-        classpath "com.netflix.nebula:gradle-ospackage-plugin:4.8.0"
-        classpath "com.tngtech.jgiven:jgiven-gradle-plugin:0.15.3"
+        classpath 'com.netflix.nebula:gradle-ospackage-plugin:4.8.0'
+        classpath 'com.tngtech.jgiven:jgiven-gradle-plugin:0.15.3'
+        classpath 'pl.allegro.tech.build:axion-release-plugin:1.9.0'
+    }
+}
+
+apply plugin: 'pl.allegro.tech.build.axion-release'
+scmVersion {
+    tag {
+        prefix = 'queue-triage'
     }
 }
 
@@ -18,6 +26,8 @@ allprojects {
     }
     apply plugin: 'java'
     apply plugin: 'idea'
+
+    project.version = scmVersion.version
 }
 
 apply from: 'dependency_config.gradle'

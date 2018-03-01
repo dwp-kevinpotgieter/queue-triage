@@ -37,6 +37,7 @@ dependencies {
 
 test {
     systemProperty 'webdriver.gecko.driver', "${project.rootDir}/lib/geckodriver/geckodriver"
+
     systemProperty "browser", project.findProperty('selenium.browser') ?: 'firefox'
     if (project.hasProperty("selenium.remote_url")) {
         systemProperty "remote", project.property("selenium.remote_url")
