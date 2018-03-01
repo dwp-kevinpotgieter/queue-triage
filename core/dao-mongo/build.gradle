@@ -1,3 +1,7 @@
+apply plugin: 'distribution'
+apply plugin: 'nebula.ospackage'
+
+
 dependencies {
     implementation project(':common:id')
     implementation project(':common:jackson')
@@ -32,4 +36,24 @@ dependencies {
     testImplementation 'net.bytebuddy:byte-buddy'
     testImplementation 'org.objenesis:objenesis:2.5.1'
     // this was test:common - end
+}
+
+distributions {
+    main {
+        contents {
+            from("${project.projectDir}/src/main/resources") {
+                into('scripts')
+            }
+        }
+    }
+}
+
+task createUsersAndRoles(dependsOn: installDist) {
+    doLast {
+        FileTree listOfScripts = fileTree(dir: "${project.projectDir}/build/install/dao-mongo", include: "**/*.sh")
+        listOfScripts.sort().each { file ->
+            println "Executing script: $file"
+            "$file".execute()
+        }
+    }
 }
