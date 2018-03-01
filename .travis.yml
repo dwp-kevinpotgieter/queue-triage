@@ -25,9 +25,7 @@ before_script:
 
 script:
   - buck build //core/dao-mongo:create-users-and-roles
-  - buck fetch //... > /dev/null
-  - buck test --all --exclude component-test > /dev/null
-  - buck test --all --include component-test > /dev/null
+  - ./gradlew build
 
 services:
   - mongodb
