@@ -9,7 +9,7 @@ buildscript {
         classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}")
         classpath "com.netflix.nebula:gradle-ospackage-plugin:4.8.0"
         //classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
-
+        classpath "com.tngtech.jgiven:jgiven-gradle-plugin:0.15.3"
     }
 }
 
@@ -47,10 +47,10 @@ subprojects {
                 entry 'jackson-jaxrs-json-provider'
             }
 
-            dependencySet(group: 'com.tngtech.jgiven', version: '0.15.1') {
+            dependencySet(group: 'com.tngtech.jgiven', version: '0.15.3') {
                 entry 'jgiven-core'
-                entry 'jgiven-html-app'
-                entry 'jgiven-html5-report'
+//                entry 'jgiven-html-app'
+//                entry 'jgiven-html5-report'
                 entry 'jgiven-junit'
                 entry 'jgiven-spring'
             }

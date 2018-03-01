@@ -1,3 +1,5 @@
+apply plugin: "com.tngtech.jgiven.gradle-plugin"
+
 dependencies {
     implementation project(':common:id')
     implementation project(':common:jackson')
@@ -46,3 +48,5 @@ dependencies {
     testImplementation 'org.hibernate:hibernate-validator'
 
 }
+
+test.finalizedBy jgivenTestReport
