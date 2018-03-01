@@ -7,6 +7,10 @@ build/
 jgiven-reports/
 target/
 .gradle/
+out/
+.DS_Store
+*.ipr
+*.iws
 
 # Files
 *.iml
