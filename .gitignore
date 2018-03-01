@@ -15,3 +15,4 @@ out/
 # Files
 *.iml
 .buckconfig.local
+/jgiven-reports/
