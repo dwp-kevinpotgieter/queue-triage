@@ -1,4 +1,7 @@
 apply plugin: 'application'
+apply plugin: 'nebula.ospackage'
+//apply plugin: 'nebula.ospackage-application'
+
 mainClassName = 'uk.gov.dwp.queue.triage.core.QueueTriageCoreApplication'
 
 dependencies {
@@ -60,4 +63,38 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest-library'
     testImplementation 'org.mockito:mockito-core'
 }
+
+ospackage {
+    packageName = project.name
+    version = project.version
+    release = '1'
+    arch = NOARCH
+    os = LINUX
+
+    into("/srv/app/${project.name}") {
+        user 'deploy'
+    }
+
+    directory("/srv/app/${project.name}/log", 0550)
+
+    into("/srv/app/${project.name}/log"){
+        includeEmptyDirs = true
+        user 'deploy'
+    }
+
+    into("/srv/app/${project.name}/log") {
+        user 'deploy'
+    }
+
+    from(installDist.outputs.files) {
+        into "/srv/app/${project.name}"
+    }
+
+    from('src/main/resources') {
+        fileType CONFIG | NOREPLACE
+        into "/srv/app/${project.name}/conf"
+    }
+
+}
+buildRpm.dependsOn installDist
 
